@@ -1,4 +1,4 @@
-from run_query import run_query
+from api.run_query import run
 
 
 def recordTemp(temp):
@@ -7,6 +7,6 @@ def recordTemp(temp):
             recordTemp(value: """+str(temp)+""") 
             }
             """
-    result = run_query(query)
+    result = run(query)
     status = result["data"]["recordTemp"]
     return status

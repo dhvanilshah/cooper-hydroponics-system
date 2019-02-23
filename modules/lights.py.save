@@ -1,0 +1,18 @@
+from relay_lib import *
+import time
+
+while True:
+	relay_on(1)
+	time.sleep(1)	
+	relay_on(2)
+	time.sleep(1) 
+	relay_on(3)
+	time.sleep(1) 
+	relay_on(4)
+	time.sleep(1) 
+	relay_off(1)
+	time.sleep(1) 
+	
+relay_all_off()
+	relay_all_on()
+	relay_all_off()
