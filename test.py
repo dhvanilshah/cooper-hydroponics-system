@@ -7,6 +7,8 @@ import time
 
 #result = recordTemp(98.4)
 #print(result)
+
+
 wat_lvl = get_level()
 if wat_lvl:
 	print("Water Level Sufficient")
