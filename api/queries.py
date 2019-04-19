@@ -1,12 +1,18 @@
 from api.run_query import run
 
 
-def recordTemp(temp):
+def recordReadings(temp, tds, wl):
     query = """
-            mutation {
-            recordTemp(value: """+str(temp)+""") 
+            query($temp: Float, $tds: Float, $wl: Int) {
+            recordReadings(temp: $temp, tds: $tds, wl: $wl)
             }
             """
-    result = run(query)
-    status = result["data"]["recordTemp"]
+    variables = {
+            "temp": temp,
+            "tds": tds,
+            "wl": wl
+    }
+    print(query)
+    result = run(query, variables)
+    status = result["data"]["recordReadings"]
     return status
