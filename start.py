@@ -2,11 +2,10 @@ from crontab import CronTab
 
 cron = CronTab(user='pi')
 
-job1 = cron.new(command='python /cooper-hydroponics-system/test.py')
+sensors = cron.new(command='python3 cooper-hydroponics-system/sensors.py')
+sensors.minute.every(2)
+sensors.set_comment("sensors")
 
-job1.minute.every(1)
-
-for item in cron:  
-    print(item)
+#light_checker = cron.new(command='python /cooper-hydroponics-system/lights.py')
 
 cron.write()
